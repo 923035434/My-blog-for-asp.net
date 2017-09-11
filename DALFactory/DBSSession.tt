@@ -1,0 +1,57 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@
+ output extension=".cs"#>
+ 
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\\Model\\Model1.edmx";
+
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+#>
+using DAL;
+using IDAL;
+using Model;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DALFactory
+{
+	public partial class DBSession : IDBSession
+    {
+<#
+// Emit Entity Types
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+    //fileManager.StartNewFile(entity.Name + "RepositoryExt.cs");
+    //BeginNamespace(namespaceName, code);    
+#>	
+		private I<#=entity.Name#>Dal _<#=entity.Name#>Dal;
+        public I<#=entity.Name#>Dal <#=entity.Name#>Dal
+        {
+            get
+            {
+                if(_<#=entity.Name#>Dal == null)
+                {
+                    _<#=entity.Name#>Dal = AbstractFactory.Create<#=entity.Name#>Dal();
+                }
+                return _<#=entity.Name#>Dal;
+            }
+            set { _<#=entity.Name#>Dal = value; }
+        }
+<#}#>
+	}	
+}

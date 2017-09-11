@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="UserInfo" EntityType="Model1.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Message" EntityType="Model1.Store.Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogType" EntityType="Model1.Store.BlogType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Blog" EntityType="Model1.Store.Blog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Singer" EntityType="Model1.Store.Singer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Song" EntityType="Model1.Store.Song" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BlogTypeBlog" Association="Model1.Store.BlogTypeBlog">
+      <End Role="BlogType" EntitySet="BlogType" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoBlog" Association="Model1.Store.UserInfoBlog">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="SingerSong" Association="Model1.Store.SingerSong">
+      <End Role="Singer" EntitySet="Singer" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Signature" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HtmlContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BlogTypeId" Type="int" Nullable="true" />
+    <Property Name="UserInfoId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Singer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SingerId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Song">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusicId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AlbumName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SingerId" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="BlogTypeBlog">
+    <End Role="BlogType" Type="Model1.Store.BlogType" Multiplicity="0..1" />
+    <End Role="Blog" Type="Model1.Store.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="BlogTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoBlog">
+    <End Role="UserInfo" Type="Model1.Store.UserInfo" Multiplicity="0..1" />
+    <End Role="Blog" Type="Model1.Store.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SingerSong">
+    <End Role="Singer" Type="Model1.Store.Singer" Multiplicity="0..1" />
+    <End Role="Song" Type="Model1.Store.Song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Singer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Song">
+        <PropertyRef Name="SingerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserInfo" EntityType="Model1.UserInfo" />
+          <EntitySet Name="Message" EntityType="Model1.Message" />
+          <EntitySet Name="BlogType" EntityType="Model1.BlogType" />
+          <EntitySet Name="Blog" EntityType="Model1.Blog" />
+          <AssociationSet Name="BlogTypeBlog" Association="Model1.BlogTypeBlog">
+            <End Role="BlogType" EntitySet="BlogType" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+          <AssociationSet Name="UserInfoBlog" Association="Model1.UserInfoBlog">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+          <EntitySet Name="Singer" EntityType="Model1.Singer" />
+          <EntitySet Name="Song" EntityType="Model1.Song" />
+          <AssociationSet Name="SingerSong" Association="Model1.SingerSong">
+            <End Role="Singer" EntitySet="Singer" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" Nullable="false" />
+          <Property Name="PassWord" Type="String" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <Property Name="Signature" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="Avatar" Type="String" Nullable="false" />
+          <NavigationProperty Name="Blog" Relationship="Model1.UserInfoBlog" FromRole="UserInfo" ToRole="Blog" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emial" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="Time" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlogType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Blog" Relationship="Model1.BlogTypeBlog" FromRole="BlogType" ToRole="Blog" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="ImgUrl" Type="String" Nullable="false" />
+          <Property Name="HtmlContent" Type="String" Nullable="false" />
+          <Property Name="Time" Type="String" Nullable="false" />
+          <NavigationProperty Name="BlogType" Relationship="Model1.BlogTypeBlog" FromRole="Blog" ToRole="BlogType" />
+          <Property Name="BlogTypeId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="UserInfo" Relationship="Model1.UserInfoBlog" FromRole="Blog" ToRole="UserInfo" />
+          <Property Name="UserInfoId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="BlogTypeBlog">
+          <End Type="Model1.BlogType" Role="BlogType" Multiplicity="0..1" />
+          <End Type="Model1.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="BlogTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserInfoBlog">
+          <End Type="Model1.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+          <End Type="Model1.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="UserInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Singer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SingerId" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ImgUrl" Type="String" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Model1.SingerSong" FromRole="Singer" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusicId" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ImgUrl" Type="String" Nullable="false" />
+          <Property Name="AlbumName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Singer" Relationship="Model1.SingerSong" FromRole="Song" ToRole="Singer" />
+          <Property Name="SingerId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="SingerSong">
+          <End Type="Model1.Singer" Role="Singer" Multiplicity="0..1" />
+          <End Type="Model1.Song" Role="Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Song">
+              <PropertyRef Name="SingerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Message)">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Emial" ColumnName="Emial" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogType">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BlogType)">
+        <MappingFragment StoreEntitySet="BlogType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Blog)">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="BlogTypeId" ColumnName="BlogTypeId" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Singer">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Singer)">
+        <MappingFragment StoreEntitySet="Singer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Song)">
+        <MappingFragment StoreEntitySet="Song">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+          <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

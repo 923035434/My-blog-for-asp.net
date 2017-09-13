@@ -16,7 +16,17 @@ namespace DAL
 
     }
 		
+	public partial class BlogSettingDal :BaseDal<BlogSetting>,IBlogSettingDal
+    {
+
+    }
+		
 	public partial class BlogTypeDal :BaseDal<BlogType>,IBlogTypeDal
+    {
+
+    }
+		
+	public partial class M_BgImgDal :BaseDal<M_BgImg>,IM_BgImgDal
     {
 
     }

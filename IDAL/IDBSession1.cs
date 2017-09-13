@@ -15,7 +15,11 @@ namespace IDAL
 	
 		IBlogDal BlogDal{get;set;}
 	
+		IBlogSettingDal BlogSettingDal{get;set;}
+	
 		IBlogTypeDal BlogTypeDal{get;set;}
+	
+		IM_BgImgDal M_BgImgDal{get;set;}
 	
 		IMessageDal MessageDal{get;set;}
 	

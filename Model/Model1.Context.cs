@@ -31,5 +31,7 @@ namespace Model
         public DbSet<Blog> Blog { get; set; }
         public DbSet<Singer> Singer { get; set; }
         public DbSet<Song> Song { get; set; }
+        public DbSet<BlogSetting> BlogSetting { get; set; }
+        public DbSet<M_BgImg> M_BgImg { get; set; }
     }
 }

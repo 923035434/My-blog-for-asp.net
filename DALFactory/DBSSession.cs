@@ -28,6 +28,20 @@ namespace DALFactory
             set { _BlogDal = value; }
         }
 	
+		private IBlogSettingDal _BlogSettingDal;
+        public IBlogSettingDal BlogSettingDal
+        {
+            get
+            {
+                if(_BlogSettingDal == null)
+                {
+                    _BlogSettingDal = AbstractFactory.CreateBlogSettingDal();
+                }
+                return _BlogSettingDal;
+            }
+            set { _BlogSettingDal = value; }
+        }
+	
 		private IBlogTypeDal _BlogTypeDal;
         public IBlogTypeDal BlogTypeDal
         {
@@ -40,6 +54,20 @@ namespace DALFactory
                 return _BlogTypeDal;
             }
             set { _BlogTypeDal = value; }
+        }
+	
+		private IM_BgImgDal _M_BgImgDal;
+        public IM_BgImgDal M_BgImgDal
+        {
+            get
+            {
+                if(_M_BgImgDal == null)
+                {
+                    _M_BgImgDal = AbstractFactory.CreateM_BgImgDal();
+                }
+                return _M_BgImgDal;
+            }
+            set { _M_BgImgDal = value; }
         }
 	
 		private IMessageDal _MessageDal;

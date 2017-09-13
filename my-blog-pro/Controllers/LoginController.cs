@@ -11,6 +11,12 @@ namespace my_blog_pro.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            string userInfo = null;
+            if (Request.Cookies["userInfo"] != null)
+            {
+                userInfo = Request.Cookies["userInfo"].Value;
+            }
+            ViewBag.userInfo = userInfo;
             return View();
         }
     }

@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using Model;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,17 @@ namespace IDAL
       
     }
 	
+	public partial interface IBlogSettingDal :IBaseDal<BlogSetting>
+    {
+      
+    }
+	
 	public partial interface IBlogTypeDal :IBaseDal<BlogType>
+    {
+      
+    }
+	
+	public partial interface IM_BgImgDal :IBaseDal<M_BgImg>
     {
       
     }

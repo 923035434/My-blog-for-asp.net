@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.SessionState;
 
 namespace my_blog_pro
 {
@@ -46,6 +47,11 @@ namespace my_blog_pro
                     }
                 }
             });
+        }
+        public override void Init()
+        {
+            base.Init();
+            this.PostAuthenticateRequest += (sender, e) => HttpContext.Current.SetSessionStateBehavior(SessionStateBehavior.Required);            
         }
     }
 }

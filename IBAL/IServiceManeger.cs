@@ -15,7 +15,17 @@ namespace IBLL
        
     }   
 	
+	public partial interface IBlogSettingService : IBaseService<BlogSetting>
+    {
+       
+    }   
+	
 	public partial interface IBlogTypeService : IBaseService<BlogType>
+    {
+       
+    }   
+	
+	public partial interface IM_BgImgService : IBaseService<M_BgImg>
     {
        
     }   

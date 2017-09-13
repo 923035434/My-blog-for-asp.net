@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/11/2017 17:09:58
+-- Date Created: 09/13/2017 13:58:40
 -- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,38 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_BlogTypeBlog]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Blog] DROP CONSTRAINT [FK_BlogTypeBlog];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoBlog]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Blog] DROP CONSTRAINT [FK_UserInfoBlog];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SingerSong]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Song] DROP CONSTRAINT [FK_SingerSong];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[UserInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserInfo];
+GO
+IF OBJECT_ID(N'[dbo].[Message]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Message];
+GO
+IF OBJECT_ID(N'[dbo].[BlogType]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BlogType];
+GO
+IF OBJECT_ID(N'[dbo].[Blog]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Blog];
+GO
+IF OBJECT_ID(N'[dbo].[Singer]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Singer];
+GO
+IF OBJECT_ID(N'[dbo].[Song]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Song];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -31,11 +58,7 @@ GO
 CREATE TABLE [dbo].[UserInfo] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Account] nvarchar(max)  NOT NULL,
-    [PassWord] nvarchar(max)  NOT NULL,
-    [UserName] nvarchar(max)  NOT NULL,
-    [Signature] nvarchar(max)  NOT NULL,
-    [Address] nvarchar(max)  NOT NULL,
-    [Avatar] nvarchar(max)  NOT NULL
+    [PassWord] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -91,6 +114,26 @@ CREATE TABLE [dbo].[Song] (
 );
 GO
 
+-- Creating table 'BlogSetting'
+CREATE TABLE [dbo].[BlogSetting] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [UserName] nvarchar(max)  NOT NULL,
+    [Signature] nvarchar(max)  NOT NULL,
+    [Address] nvarchar(max)  NOT NULL,
+    [Avatar] nvarchar(max)  NOT NULL,
+    [M_BgImg_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'M_BgImg'
+CREATE TABLE [dbo].[M_BgImg] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [M_HomeImg] nvarchar(max)  NOT NULL,
+    [M_BlogImg] nvarchar(max)  NOT NULL,
+    [IsDelete] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -128,6 +171,18 @@ GO
 -- Creating primary key on [Id] in table 'Song'
 ALTER TABLE [dbo].[Song]
 ADD CONSTRAINT [PK_Song]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'BlogSetting'
+ALTER TABLE [dbo].[BlogSetting]
+ADD CONSTRAINT [PK_BlogSetting]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'M_BgImg'
+ALTER TABLE [dbo].[M_BgImg]
+ADD CONSTRAINT [PK_M_BgImg]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -178,6 +233,21 @@ GO
 CREATE INDEX [IX_FK_SingerSong]
 ON [dbo].[Song]
     ([SingerId]);
+GO
+
+-- Creating foreign key on [M_BgImg_Id] in table 'BlogSetting'
+ALTER TABLE [dbo].[BlogSetting]
+ADD CONSTRAINT [FK_BlogSettingM_BgImg]
+    FOREIGN KEY ([M_BgImg_Id])
+    REFERENCES [dbo].[M_BgImg]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_BlogSettingM_BgImg'
+CREATE INDEX [IX_FK_BlogSettingM_BgImg]
+ON [dbo].[BlogSetting]
+    ([M_BgImg_Id]);
 GO
 
 -- --------------------------------------------------

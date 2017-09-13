@@ -22,10 +22,6 @@ namespace Model
         public int Id { get; set; }
         public string Account { get; set; }
         public string PassWord { get; set; }
-        public string UserName { get; set; }
-        public string Signature { get; set; }
-        public string Address { get; set; }
-        public string Avatar { get; set; }
     
         public virtual ICollection<Blog> Blog { get; set; }
     }

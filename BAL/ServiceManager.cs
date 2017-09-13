@@ -20,6 +20,16 @@ namespace BLL
         }
     }   
 	
+	public partial class BlogSettingService :BaseService<BlogSetting>,IBlogSettingService
+    {
+    
+
+		 public override void SetCurrentDal()
+        {
+            CurrentDal = this.CurrentDBSession.BlogSettingDal;
+        }
+    }   
+	
 	public partial class BlogTypeService :BaseService<BlogType>,IBlogTypeService
     {
     
@@ -27,6 +37,16 @@ namespace BLL
 		 public override void SetCurrentDal()
         {
             CurrentDal = this.CurrentDBSession.BlogTypeDal;
+        }
+    }   
+	
+	public partial class M_BgImgService :BaseService<M_BgImg>,IM_BgImgService
+    {
+    
+
+		 public override void SetCurrentDal()
+        {
+            CurrentDal = this.CurrentDBSession.M_BgImgDal;
         }
     }   
 	

@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using BLL;
+using IBLL;
+using Model;
+using my_blog_pro.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +16,30 @@ namespace my_blog_pro.Controllers.api
 {
     public class loginController : ApiController
     {
-        public void Post()
+        //public void Post()
+        //{
+        //    var form = HttpContext.Current.Request.Form;
+        //}
+        IUserInfoService userInfoService = new UserInfoService();
+        public string Post([FromBody] LoginItem loginItem)
         {
-            var form = HttpContext.Current.Request.Form;
+            UserInfo user = userInfoService.LoadEntites(u => u.Account == loginItem.account).FirstOrDefault();
+            if (user == null || loginItem.password!= user.PassWord)
+            {
+                return JsonConvert.SerializeObject(new { code = 404, message = "输入信息有误"});
+            }
+            HttpContext context = HttpContext.Current;
+            if (loginItem.ifChecked)
+            {
+                context.Response.Cookies["userInfo"].Value = JsonConvert.SerializeObject(new { account = loginItem.account, password = loginItem.password });
+                context.Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(10);
+            }
+            else
+            {
+                context.Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+            }
+            context.Session["user"] = user;
+            return JsonConvert.SerializeObject(new { code = 0, message = "登录成功", redirectUrl="/Admin" });
         }
     }
 }

@@ -24,11 +24,27 @@ namespace DALFactory
 
         }
 		
+	    public static IBlogSettingDal CreateBlogSettingDal()
+        {
+
+		 string fullClassName = nameSpace + ".BlogSettingDal";
+          return CreateInstance(fullClassName) as IBlogSettingDal;
+
+        }
+		
 	    public static IBlogTypeDal CreateBlogTypeDal()
         {
 
 		 string fullClassName = nameSpace + ".BlogTypeDal";
           return CreateInstance(fullClassName) as IBlogTypeDal;
+
+        }
+		
+	    public static IM_BgImgDal CreateM_BgImgDal()
+        {
+
+		 string fullClassName = nameSpace + ".M_BgImgDal";
+          return CreateInstance(fullClassName) as IM_BgImgDal;
 
         }
 		

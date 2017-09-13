@@ -12,6 +12,8 @@
     <EntitySet Name="Blog" EntityType="Model1.Store.Blog" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Singer" EntityType="Model1.Store.Singer" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Song" EntityType="Model1.Store.Song" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogSetting" EntityType="Model1.Store.BlogSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="M_BgImg" EntityType="Model1.Store.M_BgImg" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="BlogTypeBlog" Association="Model1.Store.BlogTypeBlog">
       <End Role="BlogType" EntitySet="BlogType" />
       <End Role="Blog" EntitySet="Blog" />
@@ -24,6 +26,10 @@
       <End Role="Singer" EntitySet="Singer" />
       <End Role="Song" EntitySet="Song" />
     </AssociationSet>
+    <AssociationSet Name="BlogSettingM_BgImg" Association="Model1.Store.BlogSettingM_BgImg">
+      <End Role="BlogSetting" EntitySet="BlogSetting" />
+      <End Role="M_BgImg" EntitySet="M_BgImg" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserInfo">
     <Key>
@@ -32,10 +38,6 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Account" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PassWord" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Signature" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Message">
     <Key>
@@ -89,6 +91,26 @@
     <Property Name="AlbumName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SingerId" Type="int" Nullable="true" />
   </EntityType>
+  <EntityType Name="BlogSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Signature" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="M_BgImg_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_BgImg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="M_HomeImg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="M_BlogImg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="BlogTypeBlog">
     <End Role="BlogType" Type="Model1.Store.BlogType" Multiplicity="0..1" />
     <End Role="Blog" Type="Model1.Store.Blog" Multiplicity="*" />
@@ -125,6 +147,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="BlogSettingM_BgImg">
+    <End Role="BlogSetting" Type="Model1.Store.BlogSetting" Multiplicity="*" />
+    <End Role="M_BgImg" Type="Model1.Store.M_BgImg" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="M_BgImg">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogSetting">
+        <PropertyRef Name="M_BgImg_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -148,6 +182,12 @@
             <End Role="Singer" EntitySet="Singer" />
             <End Role="Song" EntitySet="Song" />
           </AssociationSet>
+          <EntitySet Name="BlogSetting" EntityType="Model1.BlogSetting" />
+          <EntitySet Name="M_BgImg" EntityType="Model1.M_BgImg" />
+          <AssociationSet Name="BlogSettingM_BgImg" Association="Model1.BlogSettingM_BgImg">
+            <End Role="BlogSetting" EntitySet="BlogSetting" />
+            <End Role="M_BgImg" EntitySet="M_BgImg" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="UserInfo">
           <Key>
@@ -156,10 +196,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Account" Type="String" Nullable="false" />
           <Property Name="PassWord" Type="String" Nullable="false" />
-          <Property Name="UserName" Type="String" Nullable="false" />
-          <Property Name="Signature" Type="String" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" />
-          <Property Name="Avatar" Type="String" Nullable="false" />
           <NavigationProperty Name="Blog" Relationship="Model1.UserInfoBlog" FromRole="UserInfo" ToRole="Blog" />
         </EntityType>
         <EntityType Name="Message">
@@ -255,6 +291,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="BlogSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <Property Name="Signature" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="Avatar" Type="String" Nullable="false" />
+          <NavigationProperty Name="M_BgImg" Relationship="Model1.BlogSettingM_BgImg" FromRole="BlogSetting" ToRole="M_BgImg" />
+        </EntityType>
+        <EntityType Name="M_BgImg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_HomeImg" Type="String" Nullable="false" />
+          <Property Name="M_BlogImg" Type="String" Nullable="false" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BlogSetting" Relationship="Model1.BlogSettingM_BgImg" FromRole="M_BgImg" ToRole="BlogSetting" />
+        </EntityType>
+        <Association Name="BlogSettingM_BgImg">
+          <End Type="Model1.BlogSetting" Role="BlogSetting" Multiplicity="0..1" />
+          <End Type="Model1.M_BgImg" Role="M_BgImg" Multiplicity="1" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -267,10 +328,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Account" ColumnName="Account" />
           <ScalarProperty Name="PassWord" ColumnName="PassWord" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Signature" ColumnName="Signature" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -331,6 +388,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BlogSetting">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BlogSetting)">
+        <MappingFragment StoreEntitySet="BlogSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_BgImg">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.M_BgImg)">
+        <MappingFragment StoreEntitySet="M_BgImg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="M_HomeImg" ColumnName="M_HomeImg" />
+          <ScalarProperty Name="M_BlogImg" ColumnName="M_BlogImg" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BlogSettingM_BgImg" TypeName="Model1.BlogSettingM_BgImg" StoreEntitySet="BlogSetting">
+      <EndProperty Name="M_BgImg">
+        <ScalarProperty Name="Id" ColumnName="M_BgImg_Id" />
+      </EndProperty>
+      <EndProperty Name="BlogSetting">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

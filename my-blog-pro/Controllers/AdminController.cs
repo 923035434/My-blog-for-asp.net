@@ -13,7 +13,7 @@ namespace my_blog_pro.Controllers
         public ActionResult Index()
         {
             UserInfo user = (UserInfo)Session["user"];
-            return Content("登录成功");
+            return View();
         }
     }
 }

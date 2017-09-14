@@ -21,17 +21,17 @@ namespace my_blog_pro.Controllers.api
         //    var form = HttpContext.Current.Request.Form;
         //}
         IUserInfoService userInfoService = new UserInfoService();
-        public string Post([FromBody] LoginItem loginItem)
+        public string Post([FromBody] LoginItem param)
         {
-            UserInfo user = userInfoService.LoadEntites(u => u.Account == loginItem.account).FirstOrDefault();
-            if (user == null || loginItem.password!= user.PassWord)
+            UserInfo user = userInfoService.LoadEntites(u => u.Account == param.account).FirstOrDefault();
+            if (user == null || param.password!= user.PassWord)
             {
                 return JsonConvert.SerializeObject(new { code = 404, message = "输入信息有误"});
             }
             HttpContext context = HttpContext.Current;
-            if (loginItem.ifChecked)
+            if (param.ifChecked)
             {
-                context.Response.Cookies["userInfo"].Value = JsonConvert.SerializeObject(new { account = loginItem.account, password = loginItem.password });
+                context.Response.Cookies["userInfo"].Value = JsonConvert.SerializeObject(new { account = param.account, password = param.password });
                 context.Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(10);
             }
             else

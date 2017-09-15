@@ -100,7 +100,6 @@
     <Property Name="Signature" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="M_BgImg_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="M_BgImg">
     <Key>
@@ -110,6 +109,7 @@
     <Property Name="M_HomeImg" Type="nvarchar(max)" Nullable="false" />
     <Property Name="M_BlogImg" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="BlogSettingId" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="BlogTypeBlog">
     <End Role="BlogType" Type="Model1.Store.BlogType" Multiplicity="0..1" />
@@ -148,14 +148,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="BlogSettingM_BgImg">
-    <End Role="BlogSetting" Type="Model1.Store.BlogSetting" Multiplicity="*" />
-    <End Role="M_BgImg" Type="Model1.Store.M_BgImg" Multiplicity="1" />
+    <End Role="BlogSetting" Type="Model1.Store.BlogSetting" Multiplicity="0..1" />
+    <End Role="M_BgImg" Type="Model1.Store.M_BgImg" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="M_BgImg">
+      <Principal Role="BlogSetting">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="BlogSetting">
-        <PropertyRef Name="M_BgImg_Id" />
+      <Dependent Role="M_BgImg">
+        <PropertyRef Name="BlogSettingId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,10 +311,19 @@
           <Property Name="M_BlogImg" Type="String" Nullable="false" />
           <Property Name="IsDelete" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BlogSetting" Relationship="Model1.BlogSettingM_BgImg" FromRole="M_BgImg" ToRole="BlogSetting" />
+          <Property Name="BlogSettingId" Type="Int32" Nullable="true" />
         </EntityType>
         <Association Name="BlogSettingM_BgImg">
           <End Type="Model1.BlogSetting" Role="BlogSetting" Multiplicity="0..1" />
-          <End Type="Model1.M_BgImg" Role="M_BgImg" Multiplicity="1" />
+          <End Type="Model1.M_BgImg" Role="M_BgImg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogSetting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="M_BgImg">
+              <PropertyRef Name="BlogSettingId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -406,17 +415,10 @@
           <ScalarProperty Name="M_HomeImg" ColumnName="M_HomeImg" />
           <ScalarProperty Name="M_BlogImg" ColumnName="M_BlogImg" />
           <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="BlogSettingId" ColumnName="BlogSettingId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="BlogSettingM_BgImg" TypeName="Model1.BlogSettingM_BgImg" StoreEntitySet="BlogSetting">
-      <EndProperty Name="M_BgImg">
-        <ScalarProperty Name="Id" ColumnName="M_BgImg_Id" />
-      </EndProperty>
-      <EndProperty Name="BlogSetting">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

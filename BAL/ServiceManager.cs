@@ -41,9 +41,7 @@ namespace BLL
     }   
 	
 	public partial class M_BgImgService :BaseService<M_BgImg>,IM_BgImgService
-    {
-    
-
+    {    
 		 public override void SetCurrentDal()
         {
             CurrentDal = this.CurrentDBSession.M_BgImgDal;

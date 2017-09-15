@@ -148,9 +148,18 @@
     <Property Name="M_BlogImg" Type="String" Nullable="false" />
     <Property Name="IsDelete" Type="Int32" Nullable="false" />
     <NavigationProperty Name="BlogSetting" Relationship="Model1.BlogSettingM_BgImg" FromRole="M_BgImg" ToRole="BlogSetting" />
+    <Property Name="BlogSettingId" Type="Int32" Nullable="true" />
   </EntityType>
   <Association Name="BlogSettingM_BgImg">
     <End Type="Model1.BlogSetting" Role="BlogSetting" Multiplicity="0..1" />
-    <End Type="Model1.M_BgImg" Role="M_BgImg" Multiplicity="1" />
+    <End Type="Model1.M_BgImg" Role="M_BgImg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogSetting">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="M_BgImg">
+        <PropertyRef Name="BlogSettingId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

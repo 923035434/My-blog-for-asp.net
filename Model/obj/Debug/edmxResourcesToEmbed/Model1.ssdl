@@ -95,7 +95,6 @@
     <Property Name="Signature" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="M_BgImg_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="M_BgImg">
     <Key>
@@ -105,6 +104,7 @@
     <Property Name="M_HomeImg" Type="nvarchar(max)" Nullable="false" />
     <Property Name="M_BlogImg" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="BlogSettingId" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="BlogTypeBlog">
     <End Role="BlogType" Type="Model1.Store.BlogType" Multiplicity="0..1" />
@@ -143,14 +143,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="BlogSettingM_BgImg">
-    <End Role="BlogSetting" Type="Model1.Store.BlogSetting" Multiplicity="*" />
-    <End Role="M_BgImg" Type="Model1.Store.M_BgImg" Multiplicity="1" />
+    <End Role="BlogSetting" Type="Model1.Store.BlogSetting" Multiplicity="0..1" />
+    <End Role="M_BgImg" Type="Model1.Store.M_BgImg" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="M_BgImg">
+      <Principal Role="BlogSetting">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="BlogSetting">
-        <PropertyRef Name="M_BgImg_Id" />
+      <Dependent Role="M_BgImg">
+        <PropertyRef Name="BlogSettingId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

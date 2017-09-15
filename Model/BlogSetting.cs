@@ -14,12 +14,17 @@ namespace Model
     
     public partial class BlogSetting
     {
+        public BlogSetting()
+        {
+            this.M_BgImg = new HashSet<M_BgImg>();
+        }
+    
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Signature { get; set; }
         public string Address { get; set; }
         public string Avatar { get; set; }
     
-        public virtual M_BgImg M_BgImg { get; set; }
+        public virtual ICollection<M_BgImg> M_BgImg { get; set; }
     }
 }

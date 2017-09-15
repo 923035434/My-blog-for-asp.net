@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IDBSession.tt</DependentUpon>
     </Compile>
+    <Compile Include="IM_BgImgDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

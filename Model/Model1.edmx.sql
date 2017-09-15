@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/13/2017 13:58:40
+-- Date Created: 09/15/2017 15:44:33
 -- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -26,6 +26,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_SingerSong]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Song] DROP CONSTRAINT [FK_SingerSong];
 GO
+IF OBJECT_ID(N'[dbo].[FK_BlogSettingM_BgImg]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[BlogSetting] DROP CONSTRAINT [FK_BlogSettingM_BgImg];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -48,6 +51,12 @@ IF OBJECT_ID(N'[dbo].[Singer]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Song]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Song];
+GO
+IF OBJECT_ID(N'[dbo].[BlogSetting]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BlogSetting];
+GO
+IF OBJECT_ID(N'[dbo].[M_BgImg]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[M_BgImg];
 GO
 
 -- --------------------------------------------------
@@ -120,8 +129,7 @@ CREATE TABLE [dbo].[BlogSetting] (
     [UserName] nvarchar(max)  NOT NULL,
     [Signature] nvarchar(max)  NOT NULL,
     [Address] nvarchar(max)  NOT NULL,
-    [Avatar] nvarchar(max)  NOT NULL,
-    [M_BgImg_Id] int  NOT NULL
+    [Avatar] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -130,7 +138,8 @@ CREATE TABLE [dbo].[M_BgImg] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [M_HomeImg] nvarchar(max)  NOT NULL,
     [M_BlogImg] nvarchar(max)  NOT NULL,
-    [IsDelete] int  NOT NULL
+    [IsDelete] int  NOT NULL,
+    [BlogSettingId] int  NULL
 );
 GO
 
@@ -235,19 +244,19 @@ ON [dbo].[Song]
     ([SingerId]);
 GO
 
--- Creating foreign key on [M_BgImg_Id] in table 'BlogSetting'
-ALTER TABLE [dbo].[BlogSetting]
+-- Creating foreign key on [BlogSettingId] in table 'M_BgImg'
+ALTER TABLE [dbo].[M_BgImg]
 ADD CONSTRAINT [FK_BlogSettingM_BgImg]
-    FOREIGN KEY ([M_BgImg_Id])
-    REFERENCES [dbo].[M_BgImg]
+    FOREIGN KEY ([BlogSettingId])
+    REFERENCES [dbo].[BlogSetting]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_BlogSettingM_BgImg'
 CREATE INDEX [IX_FK_BlogSettingM_BgImg]
-ON [dbo].[BlogSetting]
-    ([M_BgImg_Id]);
+ON [dbo].[M_BgImg]
+    ([BlogSettingId]);
 GO
 
 -- --------------------------------------------------

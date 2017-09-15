@@ -18,6 +18,7 @@ namespace Model
         public string M_HomeImg { get; set; }
         public string M_BlogImg { get; set; }
         public int IsDelete { get; set; }
+        public Nullable<int> BlogSettingId { get; set; }
     
         public virtual BlogSetting BlogSetting { get; set; }
     }

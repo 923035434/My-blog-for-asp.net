@@ -54,6 +54,7 @@
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContextFactory.cs" />
+    <Compile Include="M_BgImgDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

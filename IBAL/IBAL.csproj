@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
+    <Compile Include="IM_BgImgService.cs" />
     <Compile Include="IServiceManeger.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

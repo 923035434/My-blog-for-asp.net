@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/15/2017 15:44:33
+-- Date Created: 09/16/2017 10:57:32
 -- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -27,7 +27,7 @@ IF OBJECT_ID(N'[dbo].[FK_SingerSong]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Song] DROP CONSTRAINT [FK_SingerSong];
 GO
 IF OBJECT_ID(N'[dbo].[FK_BlogSettingM_BgImg]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[BlogSetting] DROP CONSTRAINT [FK_BlogSettingM_BgImg];
+    ALTER TABLE [dbo].[M_BgImg] DROP CONSTRAINT [FK_BlogSettingM_BgImg];
 GO
 
 -- --------------------------------------------------
@@ -74,7 +74,7 @@ GO
 -- Creating table 'Message'
 CREATE TABLE [dbo].[Message] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Emial] nvarchar(max)  NOT NULL,
+    [Email] nvarchar(max)  NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Phone] nvarchar(max)  NOT NULL,
     [Content] nvarchar(max)  NOT NULL,

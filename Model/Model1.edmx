@@ -44,7 +44,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Emial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
@@ -203,7 +203,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Emial" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Phone" Type="String" Nullable="false" />
           <Property Name="Content" Type="String" Nullable="false" />
@@ -344,7 +344,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Message)">
         <MappingFragment StoreEntitySet="Message">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Emial" ColumnName="Emial" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Content" ColumnName="Content" />

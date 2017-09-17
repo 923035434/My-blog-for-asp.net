@@ -14,7 +14,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Message)">
         <MappingFragment StoreEntitySet="Message">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Emial" ColumnName="Emial" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Content" ColumnName="Content" />

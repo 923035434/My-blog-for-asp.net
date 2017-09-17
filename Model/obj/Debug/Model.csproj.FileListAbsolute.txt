@@ -10,3 +10,15 @@ C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\obj\Debug\Model.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\Model.dll.config
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Debug\Model.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Debug\Model.pdb

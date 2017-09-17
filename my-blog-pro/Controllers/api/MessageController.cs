@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Http;
 
 namespace my_blog_pro.Controllers.api
@@ -25,7 +27,8 @@ namespace my_blog_pro.Controllers.api
                              name = m.Name,
                              phone = m.Phone,
                              time = m.Time,
-                             emial = m.Emial
+                             email = m.Email,
+                             content = m.Content
                          };
             return JsonConvert.SerializeObject(new
             {
@@ -49,12 +52,14 @@ namespace my_blog_pro.Controllers.api
                     message="param error"
                 });
             }
+            //bool emailMatch = Regex.IsMatch(param.Email, "^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
+            //bool phoneMatch = Regex.IsMatch(param.Phone, @"^[1]+[3,5]+\d{9}");                
             messageService.AddEntity(new Message
             {
-                Name = param.Name,
-                Phone = param.Phone,
-                Emial = param.Email,
-                Content = param.Content,
+                Name = HttpUtility.HtmlEncode(param.Name),
+                Phone = HttpUtility.HtmlEncode(param.Phone),
+                Email = HttpUtility.HtmlEncode(param.Email),
+                Content = HttpUtility.HtmlEncode(param.Content),
                 Time = param.Time
             });
             return JsonConvert.SerializeObject(new

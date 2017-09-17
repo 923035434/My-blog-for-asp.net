@@ -178,10 +178,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\static\css\app.42752b84d88b71a049b23d0dbe1bb631.css" />
-    <Content Include="Content\Admin\static\js\app.04d1c06c0051a08cf6b6.js" />
-    <Content Include="Content\Admin\static\js\manifest.2623a7d3000b87cc976a.js" />
-    <Content Include="Content\Admin\static\js\vendor.8b41f0a601845941c1ed.js" />
+    <Content Include="Content\Admin\static\css\app.c8baf5d75172a5c185f2d6792174c2e7.css" />
+    <Content Include="Content\Admin\static\js\app.f479c4b0befa2bc603ba.js" />
+    <Content Include="Content\Admin\static\js\manifest.2efccc14943b3aef350c.js" />
+    <Content Include="Content\Admin\static\js\vendor.e191b5c27bbb1cf082fb.js" />
     <Content Include="Content\Login\static\css\app.f909315b31128890b7bc561f18b928b3.css" />
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js" />
@@ -198,10 +198,10 @@
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js.map" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js.map" />
     <Content Include="Content\Login\static\js\vendor.95e8b7783649b1554709.js.map" />
-    <Content Include="Content\Admin\static\css\app.42752b84d88b71a049b23d0dbe1bb631.css.map" />
-    <Content Include="Content\Admin\static\js\app.04d1c06c0051a08cf6b6.js.map" />
-    <Content Include="Content\Admin\static\js\manifest.2623a7d3000b87cc976a.js.map" />
-    <Content Include="Content\Admin\static\js\vendor.8b41f0a601845941c1ed.js.map" />
+    <Content Include="Content\Admin\static\css\app.c8baf5d75172a5c185f2d6792174c2e7.css.map" />
+    <Content Include="Content\Admin\static\js\app.f479c4b0befa2bc603ba.js.map" />
+    <Content Include="Content\Admin\static\js\manifest.2efccc14943b3aef350c.js.map" />
+    <Content Include="Content\Admin\static\js\vendor.e191b5c27bbb1cf082fb.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -221,7 +221,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

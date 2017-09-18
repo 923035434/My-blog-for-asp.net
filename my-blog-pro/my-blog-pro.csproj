@@ -162,6 +162,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\api\BaseInfoController.cs" />
+    <Compile Include="Controllers\api\BlogController.cs" />
+    <Compile Include="Controllers\api\BlogTypeController.cs" />
     <Compile Include="Controllers\api\LoginController.cs" />
     <Compile Include="Controllers\api\MessageController.cs" />
     <Compile Include="Controllers\api\M_BgImgController.cs" />
@@ -173,6 +175,8 @@
     <Compile Include="Models\BlogSetting\BaseInfoPutItem.cs" />
     <Compile Include="Models\BlogSetting\M_BgImgDlete.cs" />
     <Compile Include="Models\BlogSetting\M_BgImgPut.cs" />
+    <Compile Include="Models\BlogType\BlogTypePostItem.cs" />
+    <Compile Include="Models\Blog\BlogPostItem.cs" />
     <Compile Include="Models\Login\LoginItem.cs" />
     <Compile Include="Models\Message\MessagePost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

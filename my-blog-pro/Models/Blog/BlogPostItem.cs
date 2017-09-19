@@ -12,6 +12,6 @@ namespace my_blog_pro.Models.Blog
         public string Desc { get; set; }
         public string ImgUrl { get; set; }
         public string HtmlContent { get; set; }
-        public string time { get; set; }
+        public string Time { get; set; }
     }
 }

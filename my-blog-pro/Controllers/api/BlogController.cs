@@ -2,6 +2,7 @@
 using IBLL;
 using Model;
 using my_blog_pro.Models.Blog;
+using my_blog_pro.Models.BlogType;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,35 @@ namespace my_blog_pro.Controllers.api
         public string Get()
         {
             var blogTypeList = blogTypeService.LoadEntites(b => true);
-            var data = from bt in blogTypeList
-                       select new
-                       {
-                           id = bt.Id,
-                           name = bt.TypeName,
-                           blogs = bt.Blog
-                       };
+            List<BlogTypeBackItem> data = new List<BlogTypeBackItem>();
+            foreach (var blogType in blogTypeList)
+            {
+                List<BlogBackItem> tempBlogList = new List<BlogBackItem>();
+                BlogTypeBackItem tempBlogType = new BlogTypeBackItem {
+                    id = blogType.Id,
+                    name = blogType.TypeName,
+                    rank = blogType.Rank,
+                    blogs = tempBlogList
+                };
+                foreach (var blog in blogType.Blog)
+                {
+                    tempBlogType.blogs.Add(new BlogBackItem
+                    {
+                        Id = blog.Id,
+                        BlogTypeId = (int)blog.BlogTypeId,
+                        Description = blog.Description,
+                        HtmlContent = blog.HtmlContent,
+                        ImgUrl = blog.ImgUrl,
+                        Time = blog.Time,
+                        Title = blog.Title
+                    });
+                }
+                data.Add(tempBlogType);
+            }
+            
             return JsonConvert.SerializeObject(new {
-                code = 0                
+                code = 0,
+                data = data
             });
         }
 
@@ -38,7 +59,7 @@ namespace my_blog_pro.Controllers.api
             if (param.Title == null 
                 || param.ImgUrl == null 
                 || param.Desc == null 
-                || param.time == null 
+                || param.Time == null 
                 || param.TypeId == null 
                 || param.HtmlContent == null)
             {
@@ -55,16 +76,30 @@ namespace my_blog_pro.Controllers.api
                     message = "没有找到该类型"
                 });
             }            
-             blogService.AddEntity(new Blog
+             var item =  blogService.AddEntity(new Blog
             {
                 BlogType = blogType,
                 Title = param.Title,
                 Description = param.Desc,
                 ImgUrl = param.ImgUrl,
                 HtmlContent = param.HtmlContent,
-                Time = param.time
+                Time = param.Time
+             });
+            BlogBackItem data = new BlogBackItem
+            {
+                Id = item.Id,
+                BlogTypeId = (int)item.BlogTypeId,
+                Description = item.Description,
+                HtmlContent = item.HtmlContent,
+                ImgUrl = item.ImgUrl,
+                Time = item.Time,
+                Title = item.Title
+
+            };
+            return JsonConvert.SerializeObject(new {
+                code = 0,
+                data = data
             });
-            return JsonConvert.SerializeObject(new { });
         }
         public string Put()
         {

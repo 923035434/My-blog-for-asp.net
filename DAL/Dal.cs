@@ -25,13 +25,13 @@ namespace DAL
     {
 
     }
-
-    public partial class M_BgImgDal : BaseDal<M_BgImg>, IM_BgImgDal
+		
+	public partial class M_BgImgDal :BaseDal<M_BgImg>,IM_BgImgDal
     {
 
     }
-
-    public partial class MessageDal :BaseDal<Message>,IMessageDal
+		
+	public partial class MessageDal :BaseDal<Message>,IMessageDal
     {
 
     }

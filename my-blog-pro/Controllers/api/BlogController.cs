@@ -101,13 +101,70 @@ namespace my_blog_pro.Controllers.api
                 data = data
             });
         }
-        public string Put()
+        public string Put(int? id,[FromBody] BlogPutItem param)
         {
-            return JsonConvert.SerializeObject(new { });
+            if (id == null)
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    code = 404,
+                    message = "请选择正确的目标"
+                });
+            }
+            if (param.TypeId == null
+                || param.Title==null
+                || param.Desc == null
+                || param.ImgUrl == null
+                || param.HtmlContent == null)
+            {
+                return JsonConvert.SerializeObject(new {
+                    code = 500,
+                    message = "参数错误"
+                });
+            }
+            var blogType = blogTypeService.LoadEntites(b => b.Id == param.TypeId).FirstOrDefault();
+            if (blogType == null)
+            {
+                return JsonConvert.SerializeObject(new {
+                    code = "500",
+                    message = "请选择正确的类型"
+                });
+            }
+            var blog = blogService.LoadEntites(b => b.Id == id).FirstOrDefault();
+            blog.Title = param.Title;
+            blog.Description = param.Desc;
+            blog.ImgUrl = param.ImgUrl;
+            blog.HtmlContent = param.HtmlContent;
+            blog.BlogType = blogType;
+            blogService.EditEntity(blog);
+            return JsonConvert.SerializeObject(new {
+                code = 0,
+                message = "修改成功"
+            });
         }
-        public string Delete()
+        public string Delete(int? id)
         {
-            return JsonConvert.SerializeObject(new { });
+            if (id == null)
+            {
+                return JsonConvert.SerializeObject(new {
+                    code = 404,
+                    message = "请选择正确的目标"
+                });
+            }
+            var blogItem = blogService.LoadEntites(b => b.Id == id).FirstOrDefault();
+            if (blogItem == null)
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    code = 404,
+                    message = "没有找到要删除的目标"
+                });
+            }
+            blogService.DeleteEntity(blogItem);
+            return JsonConvert.SerializeObject(new {
+                code = 0,
+                message = "删除成功"
+            });
         }
     }
 }

@@ -9,12 +9,15 @@ using System.Net.Http;
 using System.Web.Http;
 using my_blog_pro.Models.BlogType;
 using Model;
+using my_blog_pro.App_Start;
 
 namespace my_blog_pro.Controllers.api
 {
+    //[AuthorizeApi]
     public class BlogTypeController : ApiController
     {
         IBlogTypeService blogTypeService = new BlogTypeService();
+        //[AllowAnonymous]
         public string Get()
         {
             var result = blogTypeService.LoadEntites(b => true).OrderBy(b => b.Rank).Select(b => new {
@@ -26,8 +29,7 @@ namespace my_blog_pro.Controllers.api
                 code=0,
                 data=result
             });
-        }
-
+        }        
         public string Post(BlogTypePostItem param)
         {
             if (param.Name == null || param.Rank == null)
@@ -51,7 +53,6 @@ namespace my_blog_pro.Controllers.api
                 }
             });
         }
-
         public string Put(int? id,[FromBody] BlogTypePostItem param)
         {
             if (id == null)

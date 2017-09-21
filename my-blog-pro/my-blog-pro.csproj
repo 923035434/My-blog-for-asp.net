@@ -156,6 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AuthorizeApiAttribute.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\MyExceptionAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Controllers\api\LoginController.cs" />
     <Compile Include="Controllers\api\MessageController.cs" />
     <Compile Include="Controllers\api\M_BgImgController.cs" />
+    <Compile Include="Controllers\api\UserInfoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -183,12 +185,13 @@
     <Compile Include="Models\Blog\BlogPutItem.cs" />
     <Compile Include="Models\Login\LoginItem.cs" />
     <Compile Include="Models\Message\MessagePost.cs" />
+    <Compile Include="Models\UserInfo\UserInfoPutItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin\static\css\app.94b7d66f2a4bde24722f96b51d901a73.css" />
-    <Content Include="Content\Admin\static\js\app.1511b80677c7f61cb91d.js" />
-    <Content Include="Content\Admin\static\js\manifest.03012d37e03294995aba.js" />
+    <Content Include="Content\Admin\static\js\app.d8ff585063a08f89fbea.js" />
+    <Content Include="Content\Admin\static\js\manifest.c89534727d7eab879186.js" />
     <Content Include="Content\Admin\static\js\vendor.d6d2e2ca60fd1556e52f.js" />
     <Content Include="Content\Login\static\css\app.f909315b31128890b7bc561f18b928b3.css" />
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js" />
@@ -202,14 +205,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Admin\static\css\app.94b7d66f2a4bde24722f96b51d901a73.css.map" />
-    <Content Include="Content\Admin\static\js\app.1511b80677c7f61cb91d.js.map" />
-    <Content Include="Content\Admin\static\js\manifest.03012d37e03294995aba.js.map" />
-    <Content Include="Content\Admin\static\js\vendor.d6d2e2ca60fd1556e52f.js.map" />
     <Content Include="Content\Login\static\css\app.f909315b31128890b7bc561f18b928b3.css.map" />
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js.map" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js.map" />
     <Content Include="Content\Login\static\js\vendor.95e8b7783649b1554709.js.map" />
+    <Content Include="Content\Admin\static\css\app.94b7d66f2a4bde24722f96b51d901a73.css.map" />
+    <Content Include="Content\Admin\static\js\app.d8ff585063a08f89fbea.js.map" />
+    <Content Include="Content\Admin\static\js\manifest.c89534727d7eab879186.js.map" />
+    <Content Include="Content\Admin\static\js\vendor.d6d2e2ca60fd1556e52f.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -234,8 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

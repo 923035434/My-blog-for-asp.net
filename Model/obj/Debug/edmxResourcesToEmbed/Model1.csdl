@@ -115,6 +115,7 @@
     <Property Name="AlbumName" Type="String" Nullable="false" />
     <NavigationProperty Name="Singer" Relationship="Model1.SingerSong" FromRole="Song" ToRole="Singer" />
     <Property Name="SingerId" Type="Int32" Nullable="true" />
+    <Property Name="Url" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="SingerSong">
     <End Type="Model1.Singer" Role="Singer" Multiplicity="0..1" />

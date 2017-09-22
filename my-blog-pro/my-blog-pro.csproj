@@ -168,6 +168,8 @@
     <Compile Include="Controllers\api\LoginController.cs" />
     <Compile Include="Controllers\api\MessageController.cs" />
     <Compile Include="Controllers\api\M_BgImgController.cs" />
+    <Compile Include="Controllers\api\SingerController.cs" />
+    <Compile Include="Controllers\api\SongController.cs" />
     <Compile Include="Controllers\api\UserInfoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -185,14 +187,16 @@
     <Compile Include="Models\Blog\BlogPutItem.cs" />
     <Compile Include="Models\Login\LoginItem.cs" />
     <Compile Include="Models\Message\MessagePost.cs" />
+    <Compile Include="Models\Singer\SingerPostItem.cs" />
+    <Compile Include="Models\Song\SongPostItem.cs" />
     <Compile Include="Models\UserInfo\UserInfoPutItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\static\css\app.94b7d66f2a4bde24722f96b51d901a73.css" />
-    <Content Include="Content\Admin\static\js\app.d8ff585063a08f89fbea.js" />
-    <Content Include="Content\Admin\static\js\manifest.c89534727d7eab879186.js" />
-    <Content Include="Content\Admin\static\js\vendor.d6d2e2ca60fd1556e52f.js" />
+    <Content Include="Content\Admin\static\css\app.d292534e4a1bd5c398c622f3dffa8ac7.css" />
+    <Content Include="Content\Admin\static\js\app.7202d5e43faf570634f7.js" />
+    <Content Include="Content\Admin\static\js\manifest.39223532d6fcea5e4d98.js" />
+    <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js" />
     <Content Include="Content\Login\static\css\app.f909315b31128890b7bc561f18b928b3.css" />
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js" />
@@ -209,10 +213,10 @@
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js.map" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js.map" />
     <Content Include="Content\Login\static\js\vendor.95e8b7783649b1554709.js.map" />
-    <Content Include="Content\Admin\static\css\app.94b7d66f2a4bde24722f96b51d901a73.css.map" />
-    <Content Include="Content\Admin\static\js\app.d8ff585063a08f89fbea.js.map" />
-    <Content Include="Content\Admin\static\js\manifest.c89534727d7eab879186.js.map" />
-    <Content Include="Content\Admin\static\js\vendor.d6d2e2ca60fd1556e52f.js.map" />
+    <Content Include="Content\Admin\static\css\app.d292534e4a1bd5c398c622f3dffa8ac7.css.map" />
+    <Content Include="Content\Admin\static\js\app.7202d5e43faf570634f7.js.map" />
+    <Content Include="Content\Admin\static\js\manifest.39223532d6fcea5e4d98.js.map" />
+    <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

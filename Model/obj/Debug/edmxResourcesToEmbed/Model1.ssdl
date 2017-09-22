@@ -85,6 +85,7 @@
     <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AlbumName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SingerId" Type="int" Nullable="true" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="BlogSetting">
     <Key>

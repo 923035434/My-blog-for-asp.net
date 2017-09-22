@@ -90,6 +90,7 @@
     <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AlbumName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SingerId" Type="int" Nullable="true" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="BlogSetting">
     <Key>
@@ -278,6 +279,7 @@
           <Property Name="AlbumName" Type="String" Nullable="false" />
           <NavigationProperty Name="Singer" Relationship="Model1.SingerSong" FromRole="Song" ToRole="Singer" />
           <Property Name="SingerId" Type="Int32" Nullable="true" />
+          <Property Name="Url" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="SingerSong">
           <End Type="Model1.Singer" Role="Singer" Multiplicity="0..1" />
@@ -394,6 +396,7 @@
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
           <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
           <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

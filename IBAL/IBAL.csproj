@@ -7,8 +7,8 @@
     <ProjectGuid>{0053C54E-8C63-4B51-A71D-9589C80753AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IBAL</RootNamespace>
-    <AssemblyName>IBAL</AssemblyName>
+    <RootNamespace>IBLL</RootNamespace>
+    <AssemblyName>IBLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServiceManeger.tt</DependentUpon>
     </Compile>
+    <Compile Include="ISongService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

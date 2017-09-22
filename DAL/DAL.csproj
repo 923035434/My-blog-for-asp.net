@@ -56,6 +56,7 @@
     <Compile Include="DBContextFactory.cs" />
     <Compile Include="M_BgImgDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SongDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

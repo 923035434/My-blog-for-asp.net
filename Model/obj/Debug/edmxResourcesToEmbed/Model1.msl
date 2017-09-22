@@ -64,6 +64,7 @@
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
           <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
           <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

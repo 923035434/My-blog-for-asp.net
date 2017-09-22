@@ -20,6 +20,7 @@ namespace Model
         public string ImgUrl { get; set; }
         public string AlbumName { get; set; }
         public Nullable<int> SingerId { get; set; }
+        public string Url { get; set; }
     
         public virtual Singer Singer { get; set; }
     }

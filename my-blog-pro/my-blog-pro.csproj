@@ -193,9 +193,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\static\css\app.d292534e4a1bd5c398c622f3dffa8ac7.css" />
-    <Content Include="Content\Admin\static\js\app.7202d5e43faf570634f7.js" />
-    <Content Include="Content\Admin\static\js\manifest.39223532d6fcea5e4d98.js" />
+    <Content Include="Content\Admin\static\css\app.2e86bff403958c654a74209de7f4f8ad.css" />
+    <Content Include="Content\Admin\static\js\app.8fa1c4b29bdb7aa67824.js" />
+    <Content Include="Content\Admin\static\js\manifest.653454de58f419601911.js" />
     <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js" />
     <Content Include="Content\Login\static\css\app.f909315b31128890b7bc561f18b928b3.css" />
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js" />
@@ -213,9 +213,9 @@
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js.map" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js.map" />
     <Content Include="Content\Login\static\js\vendor.95e8b7783649b1554709.js.map" />
-    <Content Include="Content\Admin\static\css\app.d292534e4a1bd5c398c622f3dffa8ac7.css.map" />
-    <Content Include="Content\Admin\static\js\app.7202d5e43faf570634f7.js.map" />
-    <Content Include="Content\Admin\static\js\manifest.39223532d6fcea5e4d98.js.map" />
+    <Content Include="Content\Admin\static\css\app.2e86bff403958c654a74209de7f4f8ad.css.map" />
+    <Content Include="Content\Admin\static\js\app.8fa1c4b29bdb7aa67824.js.map" />
+    <Content Include="Content\Admin\static\js\manifest.653454de58f419601911.js.map" />
     <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

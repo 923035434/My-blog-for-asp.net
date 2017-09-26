@@ -26,11 +26,8 @@ C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\ja\DevExpress.Xp
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\ru\DevExpress.Xpo.v17.1.resources.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\BAL.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\BAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DAL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DALFactory.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBAL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IDAL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\Model.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\EntityFramework.dll
@@ -38,7 +35,6 @@ C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DALFacto
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DALFactory.dll.config
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DAL.dll.config
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IDAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IDAL.dll.config
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\Model.pdb
@@ -56,11 +52,15 @@ C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\ja\DevEx
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\ru\DevExpress.Xpo.v17.1.resources.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BAL.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BAL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\BLL.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\BLL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\IBLL.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\bin\Debug\IBLL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\obj\Debug\BLL.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\BAL\obj\Debug\BLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\BLL.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\BLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBLL.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BLL.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BLL.pdb

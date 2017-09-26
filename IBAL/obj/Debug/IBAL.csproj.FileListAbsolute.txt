@@ -14,8 +14,6 @@ C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\bin\Debug\DAL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\bin\Debug\DAL.dll.config
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\obj\Debug\IBAL.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\IBAL.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\IBAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\DALFactory.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\IDAL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\Model.dll
@@ -32,9 +30,11 @@ C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\DAL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\DAL.dll.config
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\obj\Debug\IBAL.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\obj\Debug\IBAL.dll
-C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\obj\Debug\IBAL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\bin\Debug\IBLL.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\bin\Debug\IBLL.pdb
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\obj\Debug\IBLL.dll
 C:\Users\Administrator\Desktop\项目\my-blog-pro\IBAL\obj\Debug\IBLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\IBLL.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\bin\Debug\IBLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\obj\Debug\IBLL.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\IBAL\obj\Debug\IBLL.pdb

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\api\UserInfoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +202,14 @@
     <Content Include="Content\Login\static\js\app.94f967b3092b7c59541a.js" />
     <Content Include="Content\Login\static\js\manifest.99ad41a78d6759ccabe7.js" />
     <Content Include="Content\Login\static\js\vendor.95e8b7783649b1554709.js" />
+    <Content Include="Content\MShow\static\css\app.84d0f164315a0d10358f68ad14c51b3c.css" />
+    <Content Include="Content\MShow\static\img\avatar1.6de8b0a.jpg" />
+    <Content Include="Content\MShow\static\img\icon.4b614f2.svg" />
+    <Content Include="Content\MShow\static\img\logTopBakcground.32aff03.jpg" />
+    <Content Include="Content\MShow\static\img\topBackground5.1937d41.jpg" />
+    <Content Include="Content\MShow\static\js\app.bffba7343a156620f1cf.js" />
+    <Content Include="Content\MShow\static\js\manifest.b3d8e83b8fd9dc7c98d1.js" />
+    <Content Include="Content\MShow\static\js\vendor.4fffefa11cf439528de6.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -217,6 +226,13 @@
     <Content Include="Content\Admin\static\js\app.7202d5e43faf570634f7.js.map" />
     <Content Include="Content\Admin\static\js\manifest.39223532d6fcea5e4d98.js.map" />
     <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js.map" />
+    <Content Include="Content\MShow\static\css\app.84d0f164315a0d10358f68ad14c51b3c.css.map" />
+    <Content Include="Content\MShow\static\fonts\icon.4c83dac.eot" />
+    <Content Include="Content\MShow\static\fonts\icon.570389a.ttf" />
+    <Content Include="Content\MShow\static\fonts\icon.fd46d04.woff" />
+    <Content Include="Content\MShow\static\js\app.bffba7343a156620f1cf.js.map" />
+    <Content Include="Content\MShow\static\js\manifest.b3d8e83b8fd9dc7c98d1.js.map" />
+    <Content Include="Content\MShow\static\js\vendor.4fffefa11cf439528de6.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -238,6 +254,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Show\M.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

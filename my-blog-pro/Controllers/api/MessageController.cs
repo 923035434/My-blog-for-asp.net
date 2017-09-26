@@ -24,8 +24,7 @@ namespace my_blog_pro.Controllers.api
                          select new
                          {
                              id = m.Id,
-                             name = m.Name,
-                             phone = m.Phone,
+                             name = m.Name,                             
                              time = m.Time,
                              email = m.Email,
                              content = m.Content
@@ -39,8 +38,7 @@ namespace my_blog_pro.Controllers.api
 
         public string Post([FromBody]MessagePost param)
         {
-            if (param.Name == null
-                || param.Phone == null
+            if (param.Name == null                
                 || param.Email == null
                 || param.Content == null
                 || param.Time == null
@@ -56,8 +54,7 @@ namespace my_blog_pro.Controllers.api
             //bool phoneMatch = Regex.IsMatch(param.Phone, @"^[1]+[3,5]+\d{9}");                
             messageService.AddEntity(new Message
             {
-                Name = HttpUtility.HtmlEncode(param.Name),
-                Phone = HttpUtility.HtmlEncode(param.Phone),
+                Name = HttpUtility.HtmlEncode(param.Name),                
                 Email = HttpUtility.HtmlEncode(param.Email),
                 Content = HttpUtility.HtmlEncode(param.Content),
                 Time = param.Time

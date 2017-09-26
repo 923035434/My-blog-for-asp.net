@@ -43,6 +43,14 @@ namespace my_blog_pro.Controllers.api
         public string GetSelect()
         {
             var settingItem = blogSettingService.LoadEntites(m => true).FirstOrDefault();
+            if (settingItem == null)
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    code = 404,
+                    data = "没有找到该目标"
+                });
+            }
             var item = (from i in settingItem.M_BgImg
                         where i.IsDelete == 1
                         select i).FirstOrDefault();

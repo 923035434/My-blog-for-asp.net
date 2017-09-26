@@ -64,3 +64,5 @@ C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBLL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\IBLL.pdb
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BLL.dll
 C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\obj\Debug\BLL.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DevExpress.Data.v17.1.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\BAL\bin\Debug\DevExpress.Xpo.v17.1.dll

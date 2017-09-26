@@ -42,7 +42,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Email" Type="String" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Phone" Type="String" Nullable="false" />
     <Property Name="Content" Type="String" Nullable="false" />
     <Property Name="Time" Type="String" Nullable="false" />
   </EntityType>

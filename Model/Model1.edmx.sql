@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/22/2017 16:37:06
--- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\my-blog-pro\Model\Model1.edmx
+-- Date Created: 09/26/2017 18:01:23
+-- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -76,7 +76,6 @@ CREATE TABLE [dbo].[Message] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Phone] nvarchar(max)  NOT NULL,
     [Content] nvarchar(max)  NOT NULL,
     [Time] nvarchar(max)  NOT NULL
 );

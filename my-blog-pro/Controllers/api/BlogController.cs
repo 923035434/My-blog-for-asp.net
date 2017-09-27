@@ -1,6 +1,7 @@
 ﻿using BLL;
 using IBLL;
 using Model;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.Blog;
 using my_blog_pro.Models.BlogType;
 using Newtonsoft.Json;
@@ -13,12 +14,14 @@ using System.Web.Http;
 
 namespace my_blog_pro.Controllers.api
 {
+    [AuthorizeApi]
     public class BlogController : ApiController
     {
 
         IBlogService blogService = new BlogService();
         IBlogTypeService blogTypeService = new BlogTypeService();
         IUserInfoService userInfoService = new UserInfoService();
+        [AllowAnonymous]
         public string Get()
         {
             var blogTypeList = blogTypeService.LoadEntites(b => true);
@@ -53,7 +56,6 @@ namespace my_blog_pro.Controllers.api
                 data = data
             });
         }
-
         public string Post(BlogPostItem param)
         {
             if (param.Title == null 
@@ -83,7 +85,8 @@ namespace my_blog_pro.Controllers.api
                 Description = param.Desc,
                 ImgUrl = param.ImgUrl,
                 HtmlContent = param.HtmlContent,
-                Time = param.Time
+                Time = param.Time,
+                Views = 0
              });
             BlogBackItem data = new BlogBackItem
             {
@@ -93,8 +96,8 @@ namespace my_blog_pro.Controllers.api
                 HtmlContent = item.HtmlContent,
                 ImgUrl = item.ImgUrl,
                 Time = item.Time,
-                Title = item.Title
-
+                Title = item.Title,
+                Views = item.Views
             };
             return JsonConvert.SerializeObject(new {
                 code = 0,
@@ -164,6 +167,49 @@ namespace my_blog_pro.Controllers.api
             return JsonConvert.SerializeObject(new {
                 code = 0,
                 message = "删除成功"
+            });
+        }
+        [HttpPost]
+        [Route("~/api/Blog/{blogId:int}/AddViews")]
+        [AllowAnonymous]
+        public string AddViews(int blogId)
+        {
+            var blog = blogService.LoadEntites(b => b.Id == blogId).FirstOrDefault();
+            if (blog == null)
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    code = 404,
+                    message = "没有找到该目标"
+                });
+            }
+            blog.Views++;
+            blogService.EditEntity(blog);
+            return JsonConvert.SerializeObject(new
+            {
+                code = 0,
+                message = "成功"
+            });
+        }
+        [HttpGet]
+        [Route("~/api/Blog/GetCount")]
+        [AllowAnonymous]
+        public string GetCount()
+        {
+            var blogs = blogService.LoadEntites(b => true);
+            if (blogs == null)
+            {
+                return "";
+            }
+            int ViewCount = (from b in blogs
+                        select b.Views).Sum();
+            int blogCount = blogs.Count();
+            return JsonConvert.SerializeObject(new {
+                code = 0,
+                data = new {
+                    view = ViewCount,
+                    blog = blogCount
+                }
             });
         }
     }

@@ -64,6 +64,7 @@
     <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BlogTypeId" Type="int" Nullable="true" />
     <Property Name="UserInfoId" Type="int" Nullable="true" />
+    <Property Name="Views" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Singer">
     <Key>

@@ -34,6 +34,8 @@ public partial class Blog
 
     public Nullable<int> UserInfoId { get; set; }
 
+    public int Views { get; set; }
+
 
 
     public virtual BlogType BlogType { get; set; }

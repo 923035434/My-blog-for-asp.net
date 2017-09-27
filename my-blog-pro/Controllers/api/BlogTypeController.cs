@@ -13,11 +13,11 @@ using my_blog_pro.App_Start;
 
 namespace my_blog_pro.Controllers.api
 {
-    //[AuthorizeApi]
+    [AuthorizeApi]
     public class BlogTypeController : ApiController
     {
         IBlogTypeService blogTypeService = new BlogTypeService();
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public string Get()
         {
             var result = blogTypeService.LoadEntites(b => true).OrderBy(b => b.Rank).Select(b => new {

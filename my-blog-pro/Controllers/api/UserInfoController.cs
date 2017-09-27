@@ -1,6 +1,7 @@
 ﻿using BLL;
 using IBLL;
 using Model;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.UserInfo;
 using Newtonsoft.Json;
 using System;
@@ -13,6 +14,7 @@ using System.Web.Http;
 
 namespace my_blog_pro.Controllers.api
 {
+    [AuthorizeApi]
     public class UserInfoController : ApiController
     {
         IUserInfoService userInfoService = new UserInfoService();

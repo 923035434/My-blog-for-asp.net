@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/26/2017 18:01:23
+-- Date Created: 09/27/2017 11:17:50
 -- Generated from EDMX file: C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -98,7 +98,8 @@ CREATE TABLE [dbo].[Blog] (
     [HtmlContent] nvarchar(max)  NOT NULL,
     [Time] nvarchar(max)  NOT NULL,
     [BlogTypeId] int  NULL,
-    [UserInfoId] int  NULL
+    [UserInfoId] int  NULL,
+    [Views] int  NOT NULL
 );
 GO
 

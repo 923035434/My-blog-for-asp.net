@@ -14,5 +14,6 @@ namespace my_blog_pro.Models.Blog
         public string HtmlContent { get; set; }
         public string Time { get; set; }
         public int BlogTypeId { get; set; }
+        public int Views { get; set; }
     }
 }

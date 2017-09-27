@@ -68,6 +68,7 @@
     <Property Name="BlogTypeId" Type="Int32" Nullable="true" />
     <NavigationProperty Name="UserInfo" Relationship="Model1.UserInfoBlog" FromRole="Blog" ToRole="UserInfo" />
     <Property Name="UserInfoId" Type="Int32" Nullable="true" />
+    <Property Name="Views" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="BlogTypeBlog">
     <End Type="Model1.BlogType" Role="BlogType" Multiplicity="0..1" />

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using IBLL;
 using Model;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.Message;
 using Newtonsoft.Json;
 using System;
@@ -14,9 +15,11 @@ using System.Web.Http;
 
 namespace my_blog_pro.Controllers.api
 {
+    [AuthorizeApi]
     public class MessageController : ApiController
     {
         IMessageService messageService = new MessageService();
+        [AllowAnonymous]
         public string Get()
         {
             var list = messageService.LoadEntites(m => true);
@@ -36,6 +39,7 @@ namespace my_blog_pro.Controllers.api
             });
         }
 
+        [AllowAnonymous]
         public string Post([FromBody]MessagePost param)
         {
             if (param.Name == null                

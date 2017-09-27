@@ -1,5 +1,6 @@
 ﻿using BLL;
 using IBLL;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.Singer;
 using Newtonsoft.Json;
 using System;
@@ -11,12 +12,13 @@ using System.Web.Http;
 
 namespace my_blog_pro.Controllers.api
 {
-    
+    [AuthorizeApi]
     public class SingerController : ApiController
     {
 
         ISingerService singerService = new SingerService();
         ISongService songService = new SongService();
+        [AllowAnonymous]
         public string Get()
         {
             var singerList = singerService.LoadEntites(s => true);

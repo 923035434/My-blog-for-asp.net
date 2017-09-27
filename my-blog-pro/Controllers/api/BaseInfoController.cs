@@ -1,6 +1,7 @@
 ﻿using BLL;
 using IBLL;
 using Model;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.BlogSetting;
 using Newtonsoft.Json;
 using System;
@@ -13,12 +14,14 @@ using System.Web.Http;
 namespace my_blog_pro.Controllers.api
 {
     [RoutePrefix("api/BlogSetting/BaseInfo")]
+    [AuthorizeApi]
     public class BaseInfoController : ApiController
     {
         private IBlogSettingService blogSettingService = new BlogSettingService();
         private IM_BgImgService m_bgImgService = new M_BgImgService();
 
         [Route("")]
+        [AllowAnonymous]
         public string Get()
         {
             BlogSetting settingInfo = blogSettingService.LoadEntites(b => true).FirstOrDefault();
@@ -119,5 +122,5 @@ namespace my_blog_pro.Controllers.api
             };
             return JsonConvert.SerializeObject(result);
         }
-    }
+    }    
 }

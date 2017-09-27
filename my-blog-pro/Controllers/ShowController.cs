@@ -11,7 +11,12 @@ namespace my_blog_pro.Controllers
         // GET: Show
         public ActionResult Index()
         {
-            return Redirect("/Show/M");
+            return Redirect("/Show/P");
+            return View();
+        }
+
+        public ActionResult P()
+        {
             return View();
         }
 

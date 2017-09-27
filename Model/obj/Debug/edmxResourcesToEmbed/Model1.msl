@@ -41,6 +41,7 @@
           <ScalarProperty Name="Time" ColumnName="Time" />
           <ScalarProperty Name="BlogTypeId" ColumnName="BlogTypeId" />
           <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+          <ScalarProperty Name="Views" ColumnName="Views" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

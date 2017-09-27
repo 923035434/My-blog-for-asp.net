@@ -1,6 +1,7 @@
 ﻿using BLL;
 using IBLL;
 using Model;
+using my_blog_pro.App_Start;
 using my_blog_pro.Models.BlogSetting;
 using Newtonsoft.Json;
 using System;
@@ -13,6 +14,7 @@ using System.Web.Http;
 namespace my_blog_pro.Controllers.api
 {
     //[RoutePrefix("api/BlogSetting/M_BgImg")]
+    [AuthorizeApi]
     public class M_BgImgController : ApiController
     {
         private IBlogSettingService blogSettingService = new BlogSettingService();
@@ -20,6 +22,7 @@ namespace my_blog_pro.Controllers.api
 
         [Route("api/BlogSetting/M_BgImg")]
         [HttpGet]
+        [AllowAnonymous]
         public string Get()
         {
             var m_bgImgList = m_bgImgService.LoadEntites(m => true);
@@ -40,6 +43,7 @@ namespace my_blog_pro.Controllers.api
 
         [Route("api/BlogSetting/M_BgImg/Select")]
         [HttpGet]
+        [AllowAnonymous]
         public string GetSelect()
         {
             var settingItem = blogSettingService.LoadEntites(m => true).FirstOrDefault();
@@ -54,6 +58,10 @@ namespace my_blog_pro.Controllers.api
             var item = (from i in settingItem.M_BgImg
                         where i.IsDelete == 1
                         select i).FirstOrDefault();
+            if (item == null)
+            {
+                return "";
+            }
             var result = new
             {
                 id = item.Id,
@@ -86,7 +94,7 @@ namespace my_blog_pro.Controllers.api
             {
                 M_BlogImg = "",
                 M_HomeImg = "",
-                IsDelete = 0,
+                IsDelete = 1,
                 BlogSetting = blogSettingItem
             });
             var result = new

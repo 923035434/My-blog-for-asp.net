@@ -7,6 +7,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="Keywords" content="刘小先森，个人博客，技术博客，">
+    <meta name="description" content="刘小先森的博客是一个纯兴趣的个人技术博客，用于记录个人的观点与分享。" />
+    <meta name="author" content="刘先森"> 
+    <meta name="baidu-site-verification" content="2UVV7CrBgV" />
     <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <title>刘小先森的博客</title>
     <style>
@@ -65,11 +69,7 @@
 </html>
 <script src="https://cdn.staticfile.org/fastclick/1.0.6/fastclick.min.js"></script>
 <script>
-    if ('addEventListener' in document) {
-        document.addEventListener('DOMContentLoaded', function () {
-            FastClick.attach(document.body);
-        }, false);
-    }
+    FastClick.attach(document.body);
     var width = window.screen.width
     var url = window.location.origin
     if (width >= 768) {
@@ -81,7 +81,8 @@
     function c() {
         window.location.href = url
     }
-    btn.addEventListener('click', c)
+    btn.onclick = c
+//    btn.addEventListener('click', c)
     
     
 </script>

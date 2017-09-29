@@ -1,4 +1,5 @@
-﻿using System;
+﻿using my_blog_pro.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
@@ -11,7 +12,7 @@ namespace my_blog_pro
         public static void Register(HttpConfiguration config)
         {
             // Web API 配置和服务
-
+            config.Filters.Add(new MyApiExceptionAttribute());
             // Web API 路由
             config.MapHttpAttributeRoutes();
 

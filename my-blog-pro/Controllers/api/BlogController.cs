@@ -45,7 +45,8 @@ namespace my_blog_pro.Controllers.api
                         HtmlContent = blog.HtmlContent,
                         ImgUrl = blog.ImgUrl,
                         Time = blog.Time,
-                        Title = blog.Title
+                        Title = blog.Title,
+                        Views = blog.Views
                     });
                 }
                 data.Add(tempBlogType);

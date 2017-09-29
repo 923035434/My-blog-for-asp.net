@@ -158,6 +158,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AuthorizeApiAttribute.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MyApiExceptionAttribute.cs" />
     <Compile Include="App_Start\MyExceptionAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -234,6 +235,7 @@
     <Content Include="Content\Admin\static\js\app.1891ad3c26371a48b767.js.map" />
     <Content Include="Content\Admin\static\js\manifest.2e743559cb7d733e5608.js.map" />
     <Content Include="Content\Admin\static\js\vendor.998bd3234ba8531753b5.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -245,7 +247,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

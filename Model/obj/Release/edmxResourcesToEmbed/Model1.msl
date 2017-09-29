@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Message)">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogType">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BlogType)">
+        <MappingFragment StoreEntitySet="BlogType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Blog)">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="BlogTypeId" ColumnName="BlogTypeId" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+          <ScalarProperty Name="Views" ColumnName="Views" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Singer">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Singer)">
+        <MappingFragment StoreEntitySet="Singer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Song)">
+        <MappingFragment StoreEntitySet="Song">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+          <ScalarProperty Name="SingerId" ColumnName="SingerId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogSetting">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BlogSetting)">
+        <MappingFragment StoreEntitySet="BlogSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_BgImg">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.M_BgImg)">
+        <MappingFragment StoreEntitySet="M_BgImg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="M_HomeImg" ColumnName="M_HomeImg" />
+          <ScalarProperty Name="M_BlogImg" ColumnName="M_BlogImg" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="BlogSettingId" ColumnName="BlogSettingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

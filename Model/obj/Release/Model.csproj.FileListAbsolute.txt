@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\Model.dll.config
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\Model.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\Model.pdb
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Release\Model.dll
+C:\Users\Administrator\Desktop\项目\My-blog-for-asp.net\Model\obj\Release\Model.pdb
